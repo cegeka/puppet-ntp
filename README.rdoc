@@ -1,0 +1,5 @@
+= puppet-ntp module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-ntp/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-ntp/]
+
+This is the ntp module.
