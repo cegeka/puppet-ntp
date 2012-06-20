@@ -1,0 +1,20 @@
+class ntp::redhat {
+
+  package { [ 'ntpdate', 'ntp' ] :
+    ensure => present,
+  }
+
+  file { '/etc/ntp.conf' :
+    ensure  => file,
+    source  => "puppet:///modules/${module_name}/ntp.conf",
+    require => Package['ntp'],
+  }
+
+  service { 'ntpd' :
+    ensure    => running,
+    enable    => true,
+    hasstatus => true,
+    require   => [ Package['ntp'], File['ntp.conf'] ],
+  }
+
+}
