@@ -6,7 +6,7 @@ class ntp::debian {
 
   file { '/etc/ntp.conf' :
     ensure  => file,
-    source  => "puppet:///modules/${module_name}/ntp.conf",
+    content => template("${module_name}/ntp.conf.erb"),
     require => Package['ntp'],
   }
 
