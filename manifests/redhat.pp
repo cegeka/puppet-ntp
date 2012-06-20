@@ -14,7 +14,7 @@ class ntp::redhat {
     ensure    => running,
     enable    => true,
     hasstatus => true,
-    require   => [ Package['ntp'], File['ntp.conf'] ],
+    require   => [ Package['ntp'], File['/etc/ntp.conf'] ],
   }
 
 }
