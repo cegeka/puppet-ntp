@@ -1,6 +1,11 @@
 class ntp::redhat {
 
-  package { [ 'ntpdate', 'ntp' ] :
+  $package_list = $::operatingsystemrelease ? {
+                    /^5.*$/ => ['ntp'],
+                    /^6.*$/ => ['ntp', 'ntpdate'],
+  }
+
+  package { $package_list :
     ensure => present,
   }
 
