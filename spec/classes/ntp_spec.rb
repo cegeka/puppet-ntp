@@ -3,8 +3,8 @@
 require 'spec_helper'
 
 describe 'ntp' do
-	
-	let(:facts) { { :operatingsystem => 'redhat'} }
+
+	let(:facts) { { :operatingsystem => 'redhat', :operatingsystemrelease => '6.2'} }
 
 	let (:params) { { :ntp_servers => ['tik.cegeka.be', 'tak.cegeka.be'] } }
 
