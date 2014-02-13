@@ -13,6 +13,7 @@ class ntp::redhat {
     ensure  => file,
     content => template("${module_name}/ntp.conf.erb"),
     require => Package['ntp'],
+    notify  => Service['ntpd']
   }
 
   service { 'ntpd' :
