@@ -8,6 +8,7 @@ class ntp::debian {
     ensure  => file,
     content => template("${module_name}/ntp.conf.erb"),
     require => Package['ntp'],
+    notify  => Service['ntp']
   }
 
   service { 'ntp' :
