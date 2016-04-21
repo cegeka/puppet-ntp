@@ -3,6 +3,7 @@ class ntp::redhat {
   $package_list = $::operatingsystemrelease ? {
                     /^5.*$/ => ['ntp'],
                     /^6.*$/ => ['ntp', 'ntpdate'],
+                    /^7.*$/ => ['ntp', 'ntpdate'],
   }
 
   package { $package_list :
