@@ -18,7 +18,7 @@ class ntp($ntp_servers=undef) {
     $real_ntp_servers = $ntp_servers
   }
   case $::operatingsystem {
-    'RedHat', 'CentOS' : { include ntp::redhat }
+    'RedHat', 'CentOS', 'OracleLinux' : { include ntp::redhat }
     'Debian', 'Ubuntu' : { include ntp::debian }
     default : { fail("Operatingsystem ${::operatingsystem} not supported")}
   }
