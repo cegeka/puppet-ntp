@@ -1,5 +1,5 @@
-restrict -4 default nomodify nopeer noquery notrap
-restrict -6 default nomodify nopeer noquery notrap
+restrict -4 default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
 restrict 127.0.0.1
 restrict ::1
 <% scope.lookupvar('ntp::real_ntp_servers').each do |ntpServer| -%>
